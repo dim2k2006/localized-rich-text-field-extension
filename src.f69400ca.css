@@ -1,0 +1,112 @@
+/* Basic editor styles */
+.ProseMirror {
+  border-radius: 0px 0px 6px 6px;
+  border-width: 0px 1px 1px;
+  border-right-style: solid;
+  border-bottom-style: solid;
+  border-left-style: solid;
+  border-right-color: rgb(174, 193, 204);
+  border-bottom-color: rgb(174, 193, 204);
+  border-left-color: rgb(174, 193, 204);
+  border-image: initial;
+  border-top-style: initial;
+  border-top-color: initial;
+  padding: 20px;
+  font-size: 1rem;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  min-height: 400px;
+  outline: none;
+  white-space: pre-wrap;
+  overflow-wrap: break-word;
+  background: rgb(255, 255, 255);
+}
+.ProseMirror > * + * {
+  margin-top: 0.75em;
+}
+.ProseMirror ul,
+.ProseMirror ol {
+  padding: 0 1rem;
+}
+.ProseMirror h1,
+.ProseMirror h2,
+.ProseMirror h3,
+.ProseMirror h4,
+.ProseMirror h5,
+.ProseMirror h6 {
+  line-height: 1.1;
+}
+.ProseMirror code {
+  background-color: rgba(97, 97, 97, 0.1);
+  color: #616161;
+}
+.ProseMirror pre {
+  background: #0D0D0D;
+  color: #FFF;
+  font-family: "JetBrainsMono", monospace;
+  padding: 0.75rem 1rem;
+  border-radius: 0.5rem;
+}
+.ProseMirror pre code {
+  color: inherit;
+  padding: 0;
+  background: none;
+  font-size: 0.8rem;
+}
+.ProseMirror img {
+  max-width: 100%;
+  height: auto;
+}
+.ProseMirror blockquote {
+  padding-left: 1rem;
+  border-left: 2px solid rgba(13, 13, 13, 0.1);
+}
+.ProseMirror hr {
+  border: none;
+  border-top: 2px solid rgba(13, 13, 13, 0.1);
+  margin: 2rem 0;
+}
+
+.MenuBar {
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+  border: 1px solid rgb(174, 193, 204);
+  background-color: rgb(247, 249, 250);
+  padding: 0.5rem;
+  border-radius: 6px 6px 0px 0px;
+}
+
+.MenuBar button {
+  display: flex;
+  width: 30px;
+  height: 30px;
+  margin: 0;
+  padding: 5px;
+  color: rgb(17, 27, 43);
+  justify-content: center;
+  align-items: center;
+  appearance: none;
+  border: none;
+  background-color: transparent;
+}
+body {
+    font-family: -apple-system, "system-ui", "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";;
+}
+
+.App__item + .App__item {
+    margin-top: 15px;
+}
+
+.App__locale {
+    margin: 0px 0px 0.5rem;
+    padding: 0px;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    color: rgb(17, 27, 43);
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    display: inline-block;
+    font-weight: 500;
+}
+
+
+/*# sourceMappingURL=/src.f69400ca.css.map */
