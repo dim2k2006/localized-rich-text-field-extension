@@ -1,7 +1,8 @@
 import React, { useState, useCallback, useEffect } from 'react';
 import { render } from 'react-dom';
-import { TextInput, FormControl, Form, GlobalStyles } from '@contentful/f36-components';
 import { init, FieldExtensionSDK } from 'contentful-ui-extensions-sdk';
+import Editor from './Editor';
+import './index.css';
 
 enum Locale {
   pl_PL = 'pl-PL',
@@ -27,19 +28,19 @@ const App: React.FC<AppProps> = ({ sdk }) => {
   const [value, setValue] = useState<LocalizedField>(initialValue);
 
   const onSave = useCallback(
-      (newValue: LocalizedField) => {
-        sdk.field.setValue(newValue);
+    (newValue: LocalizedField) => {
+      sdk.field.setValue(newValue);
 
-        setValue(newValue);
-      },
-      [sdk.field]
+      setValue(newValue);
+    },
+    [sdk.field]
   );
 
   const onChange = useCallback(
-      (value: LocalizedField) => {
-        onSave(value);
-      },
-      [onSave]
+    (value: LocalizedField) => {
+      onSave(value);
+    },
+    [onSave]
   );
 
   useEffect(() => {
@@ -59,33 +60,30 @@ const App: React.FC<AppProps> = ({ sdk }) => {
   }, [onSave, sdk.field]);
 
   return (
-      <Form>
-        {Object.values(Locale).map((localeValue) => {
-          const locale = localeValue as Locale;
+    <div className="App">
+      {Object.values(Locale).map((localeValue) => {
+        const locale = localeValue as Locale;
 
-          return (
-              <FormControl key={locale}>
-                <FormControl.Label>{locale}</FormControl.Label>
+        console.log('locale:', locale);
 
-                <TextInput
-                    value={value[locale]}
-                    onChange={(event) => onChange({ ...value, [locale]: event.target.value })}
-                />
-              </FormControl>
-          );
-        })}
-      </Form>
+        return (
+          <div className="App__item" key={locale}>
+            <div className="App__locale">{locale}</div>
+
+            <Editor />
+          </div>
+        );
+      })}
+    </div>
   );
 };
 
 init((sdk) => {
   render(
-      <>
-        <GlobalStyles />
-
-        <App sdk={sdk as FieldExtensionSDK} />
-      </>,
-      document.getElementById('root')
+    <>
+      <App sdk={sdk as FieldExtensionSDK} />
+    </>,
+    document.getElementById('root')
   );
 });
 

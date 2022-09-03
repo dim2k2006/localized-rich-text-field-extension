@@ -1,0 +1,100 @@
+/* Basic editor styles */
+.ProseMirror {
+    border-radius: 0px 0px 6px 6px;
+    border-width: 0px 1px 1px;
+    border-right-style: solid;
+    border-bottom-style: solid;
+    border-left-style: solid;
+    border-right-color: rgb(174, 193, 204);
+    border-bottom-color: rgb(174, 193, 204);
+    border-left-color: rgb(174, 193, 204);
+    border-image: initial;
+    border-top-style: initial;
+    border-top-color: initial;
+    padding: 20px;
+    font-size: 1rem;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    min-height: 400px;
+    outline: none;
+    white-space: pre-wrap;
+    overflow-wrap: break-word;
+    background: rgb(255, 255, 255);
+
+    > * + * {
+        margin-top: 0.75em;
+    }
+
+    ul,
+    ol {
+        padding: 0 1rem;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        line-height: 1.1;
+    }
+
+    code {
+        background-color: rgba(#616161, 0.1);
+        color: #616161;
+    }
+
+    pre {
+        background: #0D0D0D;
+        color: #FFF;
+        font-family: 'JetBrainsMono', monospace;
+        padding: 0.75rem 1rem;
+        border-radius: 0.5rem;
+
+        code {
+            color: inherit;
+            padding: 0;
+            background: none;
+            font-size: 0.8rem;
+        }
+    }
+
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    blockquote {
+        padding-left: 1rem;
+        border-left: 2px solid rgba(#0D0D0D, 0.1);
+    }
+
+    hr {
+        border: none;
+        border-top: 2px solid rgba(#0D0D0D, 0.1);
+        margin: 2rem 0;
+    }
+}
+
+.MenuBar {
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    border: 1px solid rgb(174, 193, 204);
+    background-color: rgb(247, 249, 250);
+    padding: 0.5rem;
+    border-radius: 6px 6px 0px 0px;
+}
+
+.MenuBar button {
+    display: flex;
+    width: 30px;
+    height: 30px;
+    margin: 0;
+    padding: 0;
+    color: rgb(17, 27, 43);
+    justify-content: center;
+    align-items: center;
+    appearance: none;
+    border: none;
+    background-color: transparent;
+}

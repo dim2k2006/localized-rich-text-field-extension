@@ -3,22 +3,24 @@
   "version": "0.1.0",
   "private": true,
   "devDependencies": {
-    "@contentful/contentful-extension-scripts": "0.21.0",
-    "@contentful/eslint-config-extension": "0.4.3",
     "@babel/core": "7.12.3",
     "@babel/plugin-transform-runtime": "7.12.1",
     "@babel/preset-env": "7.12.1",
     "@babel/preset-react": "7.12.1",
+    "@contentful/contentful-extension-scripts": "0.21.0",
+    "@contentful/eslint-config-extension": "0.4.3",
     "@testing-library/react": "11.1.1",
-    "cssnano": "4.1.10",
-    "contentful-cli": "1.4.48",
-    "eslint": "7.12.1",
-    "typescript": "4.0.5",
+    "@types/draft-js": "^0.11.9",
     "@types/jest": "26.0.15",
     "@types/react": "16.9.56",
     "@types/react-dom": "16.9.9",
     "@types/webpack-env": "1.15.3",
-    "gh-pages": "^4.0.0"
+    "contentful-cli": "1.4.48",
+    "cssnano": "4.1.10",
+    "eslint": "7.12.1",
+    "gh-pages": "^4.0.0",
+    "sass": "^1.54.8",
+    "typescript": "4.0.5"
   },
   "scripts": {
     "start": "contentful-extension-scripts start",
@@ -34,13 +36,16 @@
   },
   "dependencies": {
     "@contentful/browserslist-config": "^2.0.0",
-    "@contentful/f36-components": "^4.17.0",
     "@contentful/forma-36-tokens": "^0.5.2",
+    "@tiptap/react": "^2.0.0-beta.115",
+    "@tiptap/starter-kit": "^2.0.0-beta.192",
     "contentful-ui-extensions-sdk": "3.24.0",
+    "draft-js": "^0.11.7",
     "lodash": "^4.17.21",
+    "phosphor-react": "^1.4.1",
     "prop-types": "15.7.2",
-    "react": "16.14.0",
-    "react-dom": "16.14.0"
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
   },
   "browserslist": [
     "last 5 Chrome version",
