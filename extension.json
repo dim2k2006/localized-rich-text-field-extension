@@ -1,0 +1,8 @@
+{
+  "id": "localized-rich-text-field-extension",
+  "name": "localized-rich-text-field-extension",
+  "srcdoc": "./build/index.html",
+  "fieldTypes": [
+    "Object"
+  ]
+}
