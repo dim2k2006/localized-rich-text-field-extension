@@ -1,19 +1,15 @@
 import React from 'react';
 import { EditorContent, useEditor, Editor } from '@tiptap/react';
 import StarterKit from '@tiptap/starter-kit';
-import {
-  TextBolder,
-  TextItalic,
-  TextHThree,
-  TextHFour,
-  TextHFive,
-  TextHSix,
-  ListBullets,
-  ListNumbers,
-} from 'phosphor-react';
+import TextBolder from './icons/TextBolder';
+import TextItalic from './icons/TextItalic';
+import TextHThree from './icons/TextHThree';
+import TextHFour from './icons/TextHFour';
+import TextHFive from './icons/TextHFive';
+import TextHSix from './icons/TextHSix';
+import ListBullets from './icons/ListBullets';
+import ListNumbers from './icons/ListNumbers';
 import './editor.scss';
-
-const iconSize = 16;
 
 const MenuBar = ({ editor }: { editor: Editor | null }) => {
   if (!editor) {
@@ -25,49 +21,49 @@ const MenuBar = ({ editor }: { editor: Editor | null }) => {
       <button
         onClick={() => editor.chain().focus().toggleHeading({ level: 3 }).run()}
         className={editor.isActive('heading', { level: 3 }) ? 'is-active' : ''}>
-        <TextHThree size={iconSize} />
+        <TextHThree />
       </button>
 
       <button
         onClick={() => editor.chain().focus().toggleHeading({ level: 4 }).run()}
         className={editor.isActive('heading', { level: 4 }) ? 'is-active' : ''}>
-        <TextHFour size={iconSize} />
+        <TextHFour />
       </button>
 
       <button
         onClick={() => editor.chain().focus().toggleHeading({ level: 5 }).run()}
         className={editor.isActive('heading', { level: 5 }) ? 'is-active' : ''}>
-        <TextHFive size={iconSize} />
+        <TextHFive />
       </button>
 
       <button
         onClick={() => editor.chain().focus().toggleHeading({ level: 6 }).run()}
         className={editor.isActive('heading', { level: 6 }) ? 'is-active' : ''}>
-        <TextHSix size={iconSize} />
+        <TextHSix />
       </button>
 
       <button
         onClick={() => editor.chain().focus().toggleBold().run()}
         className={editor.isActive('bold') ? 'is-active' : ''}>
-        <TextBolder size={iconSize} />
+        <TextBolder />
       </button>
 
       <button
         onClick={() => editor.chain().focus().toggleItalic().run()}
         className={editor.isActive('italic') ? 'is-active' : ''}>
-        <TextItalic size={iconSize} />
+        <TextItalic />
       </button>
 
       <button
         onClick={() => editor.chain().focus().toggleBulletList().run()}
         className={editor.isActive('bulletList') ? 'is-active' : ''}>
-        <ListBullets size={iconSize} />
+        <ListBullets />
       </button>
 
       <button
         onClick={() => editor.chain().focus().toggleOrderedList().run()}
         className={editor.isActive('orderedList') ? 'is-active' : ''}>
-        <ListNumbers size={iconSize} />
+        <ListNumbers />
       </button>
     </div>
   );
