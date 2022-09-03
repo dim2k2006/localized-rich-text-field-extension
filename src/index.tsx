@@ -1,4 +1,5 @@
 import React, { useState, useCallback, useEffect } from 'react';
+import { createRoot } from 'react-dom/client';
 import { render } from 'react-dom';
 import { init, FieldExtensionSDK } from 'contentful-ui-extensions-sdk';
 import Editor from './Editor';
@@ -64,13 +65,14 @@ const App: React.FC<AppProps> = ({ sdk }) => {
       {Object.values(Locale).map((localeValue) => {
         const locale = localeValue as Locale;
 
-        console.log('locale:', locale);
-
         return (
           <div className="App__item" key={locale}>
             <div className="App__locale">{locale}</div>
 
-            <Editor />
+            <Editor
+              value={value[locale] ?? ''}
+              onChange={(editorValue) => onChange({ ...value, [locale]: editorValue })}
+            />
           </div>
         );
       })}
@@ -78,13 +80,11 @@ const App: React.FC<AppProps> = ({ sdk }) => {
   );
 };
 
+const container = document.getElementById('root');
+const root = createRoot(container);
+
 init((sdk) => {
-  render(
-    <>
-      <App sdk={sdk as FieldExtensionSDK} />
-    </>,
-    document.getElementById('root')
-  );
+  root.render(<App sdk={sdk as FieldExtensionSDK} />);
 });
 
 /**

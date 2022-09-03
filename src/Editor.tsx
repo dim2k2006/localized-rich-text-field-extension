@@ -73,9 +73,18 @@ const MenuBar = ({ editor }: { editor: Editor | null }) => {
   );
 };
 
-const EditorComponent = (): JSX.Element => {
+interface EditorComponentProps {
+  value: string;
+  onChange: (value: string) => void;
+}
+
+const EditorComponent: React.FC<EditorComponentProps> = ({ value, onChange }): JSX.Element => {
   const editor = useEditor({
     extensions: [StarterKit],
+    onUpdate({ editor }) {
+      onChange(editor.getHTML());
+    },
+    content: value,
   });
 
   return (
