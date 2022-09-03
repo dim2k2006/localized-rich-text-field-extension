@@ -1,6 +1,5 @@
 import React, { useState, useCallback, useEffect } from 'react';
 import { createRoot } from 'react-dom/client';
-import { render } from 'react-dom';
 import { init, FieldExtensionSDK } from 'contentful-ui-extensions-sdk';
 import Editor from './Editor';
 import './index.css';
@@ -80,7 +79,8 @@ const App: React.FC<AppProps> = ({ sdk }) => {
   );
 };
 
-const container = document.getElementById('root');
+const container = document.getElementById('root') as HTMLDivElement;
+
 const root = createRoot(container);
 
 init((sdk) => {
