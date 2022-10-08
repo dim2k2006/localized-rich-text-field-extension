@@ -7,6 +7,7 @@ import './index.css';
 enum Locale {
   pl_PL = 'pl-PL',
   en_US = 'en-US',
+  cs_CZ = 'cs-CZ',
 }
 
 type LocalizedField = {
